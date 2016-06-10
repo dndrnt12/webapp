@@ -34,6 +34,47 @@ href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 			text-align:center;
 			}
 		</style>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$("#pic_univ").data("flag","false");
+						
+						$("#pic_univ").click(function(){
+							var bflag=$("#pic_univ").data("flag");
+							if(bflag=="false"){
+								bflag="true";
+								$("#pic_univ").removeClass("small");
+								$("#pic_univ").addClass("large");
+							}else{
+								bflag="false";
+								$("#pic_univ").removeClass("large");
+								$("#pic_univ").addClass("small");
+							};
+							$("#pic_univ").data("flag",bflag);
+						});
+					});
+				</script>
+		<style>
+			#pic_univ{
+				float:left;
+					margin-right:10px;
+					margin-bottom:10px;
+					-webkit-transition-property:width;
+					-webkit-transition-duration:.3s
+					}
+			.small{
+				width:30%;
+				}
+			.large{
+				width:100%;
+				}
+			.clear_both{
+				clear:both;
+				}
+			.bold_style{
+				font-weight:bold;
+				color:#950000;
+				}
+				</style>
 	</head>
 <body>
 <div data-role="page" id="main">
@@ -46,7 +87,7 @@ href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 			<img src="images/pic_i.png" alt="" class="ui-li-thumb"/>
 			<h3 class="title_style">캠퍼스 이미지</h3>
 		</a></li>
-		<li><a href="#">
+		<li><a href="#intro">
 		<img src="images/intro_i.png" alt="" class="ui-li-thumb"/>
 			<h3 class="title_style">대학교소개</h3>
 		</a></li>
@@ -90,5 +131,25 @@ href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 		<h2>버추얼 대학교</h2>
 	</div>
 </div>
+<div data-role="page" id="intro">
+	<div data-role="header" data-theme="b">
+		<a href="#main" data-icon="home" data-direction="reverse" class="ui-btn-left">Home</a>
+			<h1>대학교 소개</h1>
+	</div>
+	<div data-role="content" data-theme="c">
+	<img class="small" id="pic_univ" src="images/univ.JPG" alt="">
+	<h2>"<strong class="bold_style">시대정신</strong>을 선도하는 열린<strong class="bold_style">학문 공동체</strong>입니다</h2>
+	<div class="clear_both"></div>
+	<p>경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다
+	경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다</p>
+	<p>경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다
+	경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다</p>
+	<p>경운대학교입니다경운대학교입니다경운대학교입니다경운대학교입니다 희망</p>
+	<p>총장 내가</p>
+	</div>
+	<div data-role="footer">
+		<h2>버추얼 경운</h2>
+		</div>
+	</div>
 </body>
 </html>
